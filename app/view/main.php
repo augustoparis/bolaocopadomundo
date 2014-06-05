@@ -26,10 +26,10 @@
 				<?php 
 				include_once('mn-inicio.php'); 
 				
-				include_once('main-operadores.php');
-				include_once('main-servidor.php');
-				include_once('main-aplicativo.php');
-				include_once('main-descriptografia.php');
+				//include_once('main-operadores.php');
+				//include_once('main-servidor.php');
+				//include_once('main-aplicativo.php');
+				//include_once('main-descriptografia.php');
 				?>
 			</div>
 		</div> 	

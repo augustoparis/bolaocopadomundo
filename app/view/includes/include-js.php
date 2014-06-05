@@ -14,8 +14,10 @@
 <script type="text/javascript" src="js/ejs-utils.js"></script>
 <!-- JS -->
 <script type="text/javascript" src="js/emm-login.js"></script>
+<!--
 <script type="text/javascript" src="js/emm-operadores.js"></script>
 <script type="text/javascript" src="js/emm-servidor.js"></script>
 <script type="text/javascript" src="js/emm-aplicativo.js"></script>
 <script type="text/javascript" src="js/emm-descriptografia.js"></script>
+-->
 <script type="text/javascript" src="js/scripts.js"></script>
