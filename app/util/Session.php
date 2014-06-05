@@ -12,10 +12,10 @@ class Session {
 	}
 	
 	public static function create( $retorno ) {
-		$_SESSION['ID_OPERADORES'] 	= $retorno['ID_OPERADORES'];
-		$_SESSION['USUARIO'] 		= $retorno['USUARIO'];
-		$_SESSION['NOME'] 			= $retorno['NOME'];
-		$_SESSION['EMAIL'] 			= $retorno['EMAIL'];
+		$_SESSION['ID_USER'] 	= $retorno['ID_USER'];
+		$_SESSION['NAME'] 		= $retorno['NAME'];
+		$_SESSION['EMAIL'] 		= $retorno['EMAIL'];
+		$_SESSION['USERNAME'] 	= $retorno['USERNAME'];
 	}
 	
 	public static function get( $param ) {
