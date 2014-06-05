@@ -24,14 +24,10 @@
 	
 			<div class="col-sm-10 ef-container">
 				<?php 
-				include_once('mn-inicio.php'); 
+				include_once('mn-start.php'); 
+				
 				include_once('main-games.php');
 				include_once('main-users.php');
-				
-				//include_once('main-operadores.php');
-				//include_once('main-servidor.php');
-				//include_once('main-aplicativo.php');
-				//include_once('main-descriptografia.php');
 				?>
 			</div>
 		</div> 	
