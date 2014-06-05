@@ -28,8 +28,8 @@ var bootForm = {
 	editar : function(name, id) {
 		var n = name.toLowerCase();
 		var params = { 
-			'method' : 'editar',
-			'codigo' : id 
+			'method' : 'edit',
+			'code' : id 
 		};
 		$.post('?m=controller&c='+name+'Controller', params, function( data ) {
 			$('#panel-'+n).show('slow');
@@ -86,7 +86,7 @@ var bootForm = {
 				var serialize = $( form ).serialize() + (uc.length ? '&'+uc.join('&').replace(/%20/g, "+") : '');				
 				
 				var params = { 
-					'method' : 'salvar',
+					'method' : 'save',
 					'form' 	 : serialize
 				};
 				$.post('?m=controller&c='+name+'Controller', params, function( data ) {
@@ -114,8 +114,8 @@ var bootForm = {
 					className: "btn-success",
 					callback: function() {
 						var params = { 
-							'method' : 'deletar',
-							'codigo' : id			
+							'method' : 'remove',
+							'code' : id			
 						};						
 						$.post('?m=controller&c='+name+'Controller', params, function( data ) {
 							if ( data == true ) {

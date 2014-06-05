@@ -34,6 +34,11 @@ $(document).ready(function() {
 		Menu.init('inicio'); 
 	});		
 	
+	$('#menu-users').click(function() { 
+		Menu.init('users'); 
+		Users.init();
+	});		
+	
 	$('#menu-operadores').click(function() { 
 		Menu.init('operadores'); 
 		Operadores.init();			 

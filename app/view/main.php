@@ -1,8 +1,8 @@
 <?php
 	require_once("Session.php");
  	
-	//if ( !Session::validate() ) 
-	//	exit;	
+	if ( !Session::validate() ) 
+		exit;	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +25,8 @@
 			<div class="col-sm-10 ef-container">
 				<?php 
 				include_once('mn-inicio.php'); 
+				
+				include_once('main-users.php');
 				
 				//include_once('main-operadores.php');
 				//include_once('main-servidor.php');

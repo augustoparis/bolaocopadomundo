@@ -54,7 +54,7 @@ class Utils
 		ini_set("max_input_time", '999999');
 		ini_set("max_execution_time", '999999');
 		ini_set("output_buffering", 'On');
-		ini_set("mssql.timeout", '999999');
+		ini_set("mysql.timeout", '999999');
 		ini_set("soap.wsdl_cache_ttl",'999999');
 	}	
 	
