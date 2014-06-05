@@ -3,7 +3,7 @@
 	<img src="img/logo2.png" class="img-responsive" alt="Responsive image" >
 </div>
 <div class="logout" >
-	<span><?= Session::get('USUARIO'); ?></span>, <a href="?">Sair</a>
+	<span><?= Session::get('NAME'); ?></span>, <a href="?">Sair</a>
 </div>	
 <div class="sidebar-nav" >
 	<div class="navbar navbar-default" role="navigation">
