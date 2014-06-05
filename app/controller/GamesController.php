@@ -14,17 +14,17 @@ class GamesController
         return $this->model->all( $params );
     }
 	
-    public function editar( $params ) {
-		return $this->model->editar( $params );
+    public function edit( $params ) {
+		return $this->model->edit( $params );
     }	
 	
-    public function salvar( $params ) {
+    public function save( $params ) {
     	parse_str( $params['form'], $params );
-		return $this->model->salvar( $params );
+		return $this->model->save( $params );
     }
 
-    public function deletar( $params ) {
-		return $this->model->deletar( $params );
+    public function remove( $params ) {
+		return $this->model->remove( $params );
     }
 }
   

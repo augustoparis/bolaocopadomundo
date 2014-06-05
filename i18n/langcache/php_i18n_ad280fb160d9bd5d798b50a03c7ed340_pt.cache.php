@@ -11,9 +11,11 @@ const button_ok = 'Ok';
 const button_close = 'Fechar';
 const button_download = 'Download';
 const menu_option_1 = 'Início';
-const menu_option_2 = 'Cadastros';
-const menu_option_3 = 'Usuários';
-const menu_option_4 = 'Games';
+const menu_option_2 = 'Games';
+const menu_option_3 = 'Configuração';
+const menu_option_4 = 'Servidor';
+const menu_option_5 = 'Aplicativo';
+const menu_option_6 = 'Descriptografia (beta)';
 public static function __callStatic($string, $args) {
 vprintf(constant("self::" . $string), $args);
 }

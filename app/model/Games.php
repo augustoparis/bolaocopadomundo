@@ -2,6 +2,7 @@
   
 require_once("DataBase.php");
 require_once("Crypto.php");
+require_once("Util.php");
   
 class Games
 {
@@ -12,100 +13,52 @@ class Games
         $this->database = new DataBase();
     }
 	      
-    public function all( $params ) {	
+    public function all( $params ) {
+			
     	$sql  = "";
-        $sql .= " SELECT * FROM GAMES ORDER BY GAMES.ID_GAME ";
+        $sql .= " SELECT * FROM GAMES ";
+        $sql .= " WHERE ACTIVE = " . $params['active'];
+        $sql .= " ORDER BY GAMES.ID_GAME ";
 
 		return $this->database->select_sql( $sql );				
 	}  
 	
-	public function editar( $params ) {
-		$codigo = utf8_decode($params['codigo']);
+	public function edit( $params ) {		
+		$codigo = utf8_decode($params['code']);
 		
     	$sql  = "";
-        $sql .= " SELECT * FROM OPERADORES ";
-        $sql .= " WHERE ID_OPERADORES = " . $codigo;
-        $sql .= " ORDER BY ID_OPERADORES ";
+        $sql .= " SELECT * FROM GAMES ";
+        $sql .= " WHERE ID_GAME = " . $codigo;
+        $sql .= " ORDER BY ID_GAME ";
 			 
        	$r = $this->database->select_sql( $sql );
-		$r[0]['SENHA'] = Crypto::decode($r[0]['SENHA']);
 		return $r[0];
-	}		
-
-	private function usuarioExiste( $params ) {
-		$params = utf8_decode($params);
-		
-    	$sql  = "";
-        $sql .= " SELECT * FROM OPERADORES ";
-        $sql .= " WHERE USUARIO = '" . $params . "'";
-        $sql .= " ORDER BY ID_OPERADORES ";
-			 
-       	return $this->database->select_sql( $sql );
-	}
-	
-	private function emailExiste( $params ) {
-		$params = utf8_decode($params);
-		
-    	$sql  = "";
-        $sql .= " SELECT * FROM OPERADORES ";
-        $sql .= " WHERE EMAIL = '" . $params . "'";
-        $sql .= " ORDER BY ID_OPERADORES ";
-			 
-       	return $this->database->select_sql( $sql );
-	}
-	
-	private function cadastroValidate( $params ) {
-		if ( $params['id_operadores'] == 0 ) 
-		{
-			$r = $this->usuarioExiste( $params['usuario'] );
-			if ( is_array($r) ) 
-				return 'Este usuário já está sendo usado.';
-		
-			$r = $this->emailExiste( $params['email'] );
-			if ( is_array($r) ) 
-				return 'Este endereço de e-mail já está sendo usado.';
-		}
-		
-		return true;
-	}				
+	}						
        
-    public function salvar( $params ) {
-    	if ( is_string($r = $this->cadastroValidate( $params )) ) {
-    		return $r;
-    	}
-    	
-    	if ( array_key_exists('operadores-novo', $params) ) {
- 		   	$params['id_operadores'] = 0;
- 		   	$params['ativo'] = '1';
-    	} else {
-    		$params['email'  ] = Session::get('EMAIL');
-			$params['usuario'] = Session::get('USUARIO');
-    	}
-    	
-    	$id_operadores 	= utf8_decode( $params['id_operadores'] );
-    	$nome  		   	= utf8_decode( $params['nome'] );		
- 		$email 	 		= utf8_decode( $params['email'] );		
-		$usuario 		= strtoupper(utf8_decode( $params['usuario'] ));
-    	$senha 	 	   	= Crypto::encode(strtoupper(utf8_decode( $params['senha'] )));
-    	$ativo 	 	   	= utf8_decode( $params['ativo'] );
+    public function save( $params ) {					    	
+    	$id_game 	= utf8_decode( $params['id_game'] );
+    	$team1 		= utf8_decode( $params['team1'] );		
+ 		$team2 	 	= utf8_decode( $params['team2'] );		
+		$value 		= utf8_decode( Utils::formatCurrency($params['value']) );
+    	$date 		= utf8_decode( Utils::formatadata_sql($params['date']) );
+    	$hour 		= utf8_decode( $params['hour'] . ':00' );
+		$active 	= utf8_decode( $params['active'] );
     	    	    	
     	$params = array(
-    		'ID_OPERADORES' 	=> $id_operadores,
-    		'NOME' 				=> "'$nome'",
-    		'EMAIL' 			=> "'$email'",
-    		'USUARIO' 			=> "'$usuario'",
-    		'SENHA' 			=> "'$senha'",
-    	    'ATIVO' 			=> $ativo,
+    		'ID_GAME' 	=> $id_game,
+    		'TEAM1' 	=> "'$team1'",
+    		'TEAM2' 	=> "'$team2'",
+    		'VALUE' 	=> $value,
+    		'DATE' 		=> "'$date'",
+    	    'HOUR' 		=> "'$hour'",
+    	    'ACTIVE' 	=> $active
     	);
-    	
-    	// var_dump( $params );
-    	// exit;
-    	
-    	return (int) $this->database->execute_sp('SX_OPERADORES', $params, $id_name, $id);
+				
+		return (int) $this->database->execute_sp('SX_GAMES', $params);
     }
 
-	public function deletar( $params ) {
-		$codigo = utf8_decode($params['codigo']);
-		return $this->database->execute_sql("UPDATE OPERADORES SET ATIVO = 0 WHERE ID_OPERADORES = $codigo ");
+	public function remove( $params ) {
+		$code = utf8_decode($params['code']);
+		return $this->database->execute_sql("UPDATE GAMES SET ACTIVE = 0 WHERE ID_GAME = $code ");
 	}	
 }

@@ -1,15 +1,15 @@
 var Games = {	
 	init : function() {
 		Games.all();
-		Games.salvar();
+		Games.save();
 	},
 	all : function() {
 		var id = '#table-games';		
 		bootTable.clear( id );		
 		
 		var params = { 
-			'method' : 'all'
-			//'ativo'  : $(id + ' #ativo').val()
+			'method' : 'all',
+			'active'  : $(id + ' #active').val()
 		};
 		$.post('?m=controller&c=GamesController', params, function( data ) {
 			$.each( data, function( key, values ) {
@@ -23,8 +23,9 @@ var Games = {
 			        "VALUE" 		: values.VALUE,
 		            "DATE"   		: values.DATE,
 		            "HOUR"   		: values.HOUR,
-		            "EDITAR"  		: '<div onclick="Games.editar('+values.ID_GAME+')" class="btn btn-success" ><span class="glyphicon glyphicon-pencil"></span></div>',
-		            "DELETAR" 		: '<div onclick="Operadores.deletar('+values.ID_GAME+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
+		            "ACTIVE"   		: ( values.ACTIVE == '1' ) ? 'Sim' : 'Não',
+		            "EDIT"  		: '<div onclick="Games.edit('+values.ID_GAME+')" class="btn btn-success" ><span class="glyphicon glyphicon-pencil"></span></div>',
+		            "REMOVE" 		: '<div onclick="Games.remove('+values.ID_GAME+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
 		        };
 		        bootTable.addItem( 
 		            id, 
@@ -34,27 +35,27 @@ var Games = {
 		    });  			
 		}, 'json');
 	},
-	ativo : function() {
-		//$('#table-games #ativo').val( ( $('#table-operadores #ativo').is(':checked') ) ? 1 : 0 );
-		//Operadores.all();
+	active : function() {
+		$('#table-games #active').val( ( $('#table-games #active').is(':checked') ) ? 1 : 0 );
+		Games.all();
 	},
-	resetar : function() {
+	reset : function() {
 		bootForm.resetar('Games');
 	},	
-	novo : function() {
+	insert : function() {
 		//$('#panel-games').hide('slow');
 		bootForm.novo('Games');
 	},	
-	editar : function( id ) {
-		Input.readOnly('email');
-		Input.readOnly('usuario');
+	edit : function( id ) {
+		// Input.readOnly('email');
+		// Input.readOnly('usuario');
 
 		bootForm.editar('Games', id);
 	},	
-	salvar : function() {
+	save : function() {
 		bootForm.salvar('Games');
 	},	
-	deletar : function( id ) {
+	remove : function( id ) {
 		bootForm.deletar('Games', id);
 	}
 };
