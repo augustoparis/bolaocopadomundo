@@ -89,24 +89,24 @@ class Users
 			// $params['usuario'] = Session::get('USUARIO');
     	// }
     	
-    	$id_operadores 	= utf8_decode( $params['id_operadores'] );
-    	$nome  		   	= utf8_decode( $params['nome'] );		
- 		$email 	 		= utf8_decode( $params['email'] );		
-		$usuario 		= strtoupper(utf8_decode( $params['usuario'] ));
-    	$senha 	 	   	= Crypto::encode(strtoupper(utf8_decode( $params['senha'] )));
-    	$ativo 	 	   	= utf8_decode( $params['ativo'] );
+    	$id_user 	= utf8_decode( $params['id_user'] );
+    	$name  		= utf8_decode( $params['name'] );		
+ 		$email 	 	= utf8_decode( $params['email'] );		
+		$username 	= strtoupper(utf8_decode( $params['username'] ));
+    	$password 	= Crypto::encode(strtoupper(utf8_decode( $params['password'] )));
+    	$active 	= utf8_decode( $params['active'] );
     	    	    	
     	$params = array(
-    		'ID_USER' 		=> $id_operadores,
-    		'NAME' 			=> "'$nome'",
+    		'ID_USER' 		=> $id_user,
+    		'NAME' 			=> "'$name'",
     		'EMAIL' 		=> "'$email'",
-    		'USERNAME' 		=> "'$usuario'",
-    		'PASSWORD' 		=> "'$senha'",
-    	    'ACTIVE' 		=> $ativo,
-    	    'ACCESS_LEVEL' 	=> $ativo
+    		'USERNAME' 		=> "'$username'",
+    		'PASSWORD' 		=> "'$password'",
+    	    'ACTIVE' 		=> $active,
+    	    'ACCESS_LEVEL' 	=> '2'
     	);
     	
-    	return (int) $this->database->execute_sp('SX_USERS', $params, $id_name, $id);
+    	return (int) $this->database->execute_sp('SX_USERS', $params);
     }
 
 	public function remove( $params ) {

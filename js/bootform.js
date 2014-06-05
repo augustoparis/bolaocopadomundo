@@ -96,7 +96,7 @@ var bootForm = {
 					else {
 						var o = eval(name);
 						o.all();
-						o.novo();
+						o.insert();
 					}
 				}, 'json');
 
