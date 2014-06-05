@@ -12,10 +12,11 @@ class Session {
 	}
 	
 	public static function create( $retorno ) {
-		$_SESSION['ID_USER'] 	= $retorno['ID_USER'];
-		$_SESSION['NAME'] 		= $retorno['NAME'];
-		$_SESSION['EMAIL'] 		= $retorno['EMAIL'];
-		$_SESSION['USERNAME'] 	= $retorno['USERNAME'];
+		$_SESSION['ID_USER'] 		= $retorno['ID_USER'];
+		$_SESSION['NAME'] 			= $retorno['NAME'];
+		$_SESSION['EMAIL'] 			= $retorno['EMAIL'];
+		$_SESSION['USERNAME'] 	  	= $retorno['USERNAME'];
+		$_SESSION['ACCESS_LEVEL'] 	= $retorno['ACCESS_LEVEL'];
 	}
 	
 	public static function get( $param ) {
