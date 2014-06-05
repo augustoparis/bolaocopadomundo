@@ -25,37 +25,23 @@ var OperadoresNovo = {
 	}
 };
 
-$(document).ready(function() {
+$(document).ready(function() {	
 	Login.init();
-	OperadoresNovo.salvar();
-
-	Menu.init('inicio'); 
-	$('#menu-inicio').click(function() { 
-		Menu.init('inicio'); 
-	});		
+	//OperadoresNovo.salvar();
 	
+	//Menu.init('inicio'); 
+	//$('#menu-inicio').click(function() { 
+	//	Menu.init('inicio'); 
+	//});		
+	
+	$('#menu-games').click(function() { 
+		Menu.init('games'); 
+		Games.init();		 
+
+	});
+
 	$('#menu-users').click(function() { 
 		Menu.init('users'); 
 		Users.init();
 	});		
-	
-	$('#menu-operadores').click(function() { 
-		Menu.init('operadores'); 
-		Operadores.init();			 
-	});
-
-	$('#menu-servidor').click(function() { 
-		Menu.init('servidor'); 
-		Servidor.init();			 
-	});
-
-	$('#menu-aplicativo').click(function() { 
-		Menu.init('aplicativo'); 
-		Aplicativo.init();			 
-	});
-	
-	$('#menu-descriptografia').click(function() { 
-		Menu.init('descriptografia'); 
-		Descriptografia.init();			 
-	});	
 });

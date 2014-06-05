@@ -25,7 +25,7 @@
 			<div class="col-sm-10 ef-container">
 				<?php 
 				include_once('mn-inicio.php'); 
-				
+				include_once('main-games.php');
 				include_once('main-users.php');
 				
 				//include_once('main-operadores.php');

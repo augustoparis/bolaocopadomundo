@@ -5,7 +5,7 @@ var Menu =
 		$('#menu ul li').removeClass(); /* remove all .active */
         $('div[id^="div-"]').hide();
     },
-    show: function(id) {
+    show: function(id) {	
 		$('#menu ul li a#menu-'+id).parent().addClass('active'); /* set class .active */
         $('#div-'+id).show('slow');
     },

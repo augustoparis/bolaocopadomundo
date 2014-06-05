@@ -20,6 +20,7 @@
 			<ul class="nav navbar-nav">
 				<li><hr/></li>
 				<li class="active"><a id="menu-inicio" href="javascript:void(0)" ><?= L::menu_option_1; ?></a></li>
+				<li><a id="menu-games" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span><?= L::menu_option_2; ?></a></li>
 				<li><hr/></li>
 				<li class="active"><a href="javascript:void(0)" >Cadastros</a></li>
 				<li><a id="menu-users" href="javascript:void(0)" ><span class="glyphicon glyphicon-chevron-right"></span>Usuários</a></li>

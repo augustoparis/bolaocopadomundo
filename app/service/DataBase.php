@@ -20,7 +20,7 @@ class DataBase
     private function query($sql='',$rows=false,$organize=true) {
 		$this->connect();
 
-		$result = mysql_query( $sql );
+		$result = mysql_query( $sql );		
 		$numrows = @mysql_num_rows( $result );
 		
 		if ( $numrows > 0 ) {
