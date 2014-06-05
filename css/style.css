@@ -41,8 +41,8 @@ form.validForm input.error, form.validForm textarea.error {
     z-index: 5;
 }
 .ef-head {
-    background-color: #878B0D;
-    background-image: linear-gradient(to bottom, #08812F, #878B0D);
+    background-color: #042B13;
+    background-image: linear-gradient(to bottom, #007D17, #042B13);
     background-repeat: repeat-x;
     color: #FFFFFF;
 }
