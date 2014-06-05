@@ -5,7 +5,7 @@ class DataBase
 	private static $myServer = "localhost";
 	private static $myUser = "root";
 	private static $myPass = "";
-	private static $myDB = "AUTOBKP";
+	private static $myDB = "BOLAO";
 	private static $dbhandle;
 
 	private function connect() {
