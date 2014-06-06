@@ -16,6 +16,10 @@ class Utils
 
 		return number_format($vlr, $precision, $dec_point, $thousands_sep);
 	}
+
+	public static function formatHours($str) {
+		return substr_replace($str, '', '5');
+	}	
 	
 	public static function addZeros($number, $n) {
 		return str_pad($number, $n, "0", STR_PAD_LEFT);

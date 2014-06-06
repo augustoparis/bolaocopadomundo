@@ -1,11 +1,11 @@
 var NivelAcesso = {
 	descricao : function(valor) {
 		if ( valor == 0 ) 
-			return 'Bronze'
+			return 'Apostador'
 		else if ( valor == 1 )  
-			return 'Prata'
+			return 'Sub Administrador'
 		else
-			return 'Ouro';
+			return 'Administrador';
 	},
 	valor : function(descricao) {
 		if ( descricao.toLowerCase() == 'Bronze'.toLowerCase() ) 

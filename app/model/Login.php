@@ -14,7 +14,7 @@ class Login
       
     public function logar( $params=null ) {
     	$user = strtoupper(utf8_decode($params["username"]));
-    	$password   = Crypto::encode(strtoupper(utf8_decode($params["password"])));
+    	$password = Crypto::encode(strtoupper(utf8_decode($params["password"])));
 		
 		$sql  = "";
         $sql .= " SELECT * 

@@ -15,11 +15,6 @@
 <!-- JS -->
 <script type="text/javascript" src="js/emm-nivelacesso.js"></script>
 <script type="text/javascript" src="js/emm-login.js"></script>
-<script type="text/javascript" src="js/emm-games.js"></script>
-<!--
-<script type="text/javascript" src="js/emm-servidor.js"></script>
-<script type="text/javascript" src="js/emm-aplicativo.js"></script>
-<script type="text/javascript" src="js/emm-descriptografia.js"></script>
--->
 <script type="text/javascript" src="js/emm-users.js"></script>
+<script type="text/javascript" src="js/emm-games.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>

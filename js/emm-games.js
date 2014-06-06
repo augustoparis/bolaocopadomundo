@@ -14,17 +14,17 @@ var Games = {
 		$.post('?m=controller&c=GamesController', params, function( data ) {
 			$.each( data, function( key, values ) {
 		        var header = { 
-		            "CODIGO" : values.ID_GAME
+		            "CODE" : values.ID_GAME
 		        };
 		        var values = {
-		        	"CODIGO"  		: values.ID_GAME,
+		        	"CODE"  		: values.ID_GAME,
 			        "TEAM1" 		: values.TEAM1,
 		            "TEAM2"   		: values.TEAM2,
 			        "VALUE" 		: values.VALUE,
 		            "DATE"   		: values.DATE,
 		            "HOUR"   		: values.HOUR,
 		            "ACTIVE"   		: ( values.ACTIVE == '1' ) ? 'Sim' : 'Não',
-		            "EDIT"  		: '<div onclick="Games.edit('+values.ID_GAME+')" class="btn btn-success" ><span class="glyphicon glyphicon-pencil"></span></div>',
+		            "EDIT"  		: '<div onclick="Games.edit('+values.ID_GAME+')" class="btn btn-warning" ><span class="glyphicon glyphicon-pencil"></span></div>',
 		            "REMOVE" 		: '<div onclick="Games.remove('+values.ID_GAME+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
 		        };
 		        bootTable.addItem( 
@@ -43,13 +43,9 @@ var Games = {
 		bootForm.resetar('Games');
 	},	
 	insert : function() {
-		//$('#panel-games').hide('slow');
 		bootForm.novo('Games');
 	},	
 	edit : function( id ) {
-		// Input.readOnly('email');
-		// Input.readOnly('usuario');
-
 		bootForm.editar('Games', id);
 	},	
 	save : function() {

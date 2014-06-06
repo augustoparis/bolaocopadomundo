@@ -27,17 +27,15 @@ var OperadoresNovo = {
 
 $(document).ready(function() {	
 	Login.init();
-	//OperadoresNovo.salvar();
 	
-	//Menu.init('inicio'); 
-	//$('#menu-inicio').click(function() { 
-	//	Menu.init('inicio'); 
-	//});		
+	Menu.init('start'); 
+	$('#menu-start').click(function() { 
+		Menu.init('start'); 
+	});		
 	
 	$('#menu-games').click(function() { 
 		Menu.init('games'); 
 		Games.init();		 
-
 	});
 
 	$('#menu-users').click(function() { 

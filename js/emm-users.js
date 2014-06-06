@@ -24,7 +24,7 @@ var Users = {
 		            "PASSWORD"   	: values.PASSWORD,
 		            "ACCESS_LEVEL" 	: NivelAcesso.descricao( values.ACCESS_LEVEL ),
 		            "ACTIVE"   		: ( values.ACTIVE == '1' ) ? 'Sim' : 'Não',
-		            "EDIT"  		: '<div onclick="Users.edit('+values.ID_USER+')" class="btn btn-success" ><span class="glyphicon glyphicon-pencil"></span></div>',
+		            "EDIT"  		: '<div onclick="Users.edit('+values.ID_USER+')" class="btn btn-warning" ><span class="glyphicon glyphicon-pencil"></span></div>',
 		            "REMOVE" 		: '<div onclick="Users.remove('+values.ID_USER+')" class="btn btn-danger" ><span class="glyphicon glyphicon-trash"></span></div>'
 		        };
 		        bootTable.addItem( 

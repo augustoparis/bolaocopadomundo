@@ -24,9 +24,9 @@ form.validForm input.error, form.validForm textarea.error {
 }
 
 /* =Css =Principal =Btns =Novo */ 
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:focus {
+#form-login .btn-primary,
+#form-login .btn-primary:hover,
+#form-login .btn-primary:focus {
     background-color: #08812F;
     border-color: #878B0D;
     color: #FFFFFF;	
@@ -41,8 +41,8 @@ form.validForm input.error, form.validForm textarea.error {
     z-index: 5;
 }
 .ef-head {
-    background-color: #878B0D;
-    background-image: linear-gradient(to bottom, #08812F, #878B0D);
+    background-color: #00521A;
+    background-image: linear-gradient(to bottom, #009F33, #00521A);
     background-repeat: repeat-x;
     color: #FFFFFF;
 }
@@ -78,7 +78,7 @@ form.validForm input.error, form.validForm textarea.error {
 .logout {
 	text-align: center;
 	color: #FFFFFF;
-	margin-top: 20px;	
+	/*margin-top: 20px;*/
 }
 
 /* =Login =Google */
@@ -257,6 +257,7 @@ form.validForm input.error, form.validForm textarea.error {
 	display: block;
 	margin-right: auto;
 	margin-left: auto;
+	max-width: 75%;
 }
 .menu-logo {
     padding: 10px; 

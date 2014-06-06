@@ -9,19 +9,25 @@ class Games
     var $database;
       
     public function __construct() {
-    	// Utils::setFullLimit();
-        $this->database = new DataBase();
+    	Utils::setFullLimit();
+        
+    	$this->database = new DataBase();
     }
 	      
     public function all( $params ) {
-			
     	$sql  = "";
         $sql .= " SELECT * FROM GAMES ";
         $sql .= " WHERE ACTIVE = " . $params['active'];
         $sql .= " ORDER BY GAMES.ID_GAME ";
 
-		return $this->database->select_sql( $sql );				
-	}  
+		$retorno = $this->database->select_sql( $sql );
+		foreach ($retorno as $key => $value) {
+			$retorno[ $key ][ 'VALUE' ] = Utils::formatCurrencyBr( $value['VALUE'] );
+			$retorno[ $key ][ 'DATE'  ] = Utils::formatadata_br( $value['DATE'] );
+			$retorno[ $key ][ 'HOUR'  ] = Utils::formatHours( $value['HOUR'] );
+		}
+		return $retorno;
+    }  
 	
 	public function edit( $params ) {		
 		$codigo = utf8_decode($params['code']);
@@ -31,8 +37,13 @@ class Games
         $sql .= " WHERE ID_GAME = " . $codigo;
         $sql .= " ORDER BY ID_GAME ";
 			 
-       	$r = $this->database->select_sql( $sql );
-		return $r[0];
+		$retorno = $this->database->select_sql( $sql );
+		foreach ($retorno as $key => $value) {
+			$retorno[ $key ][ 'VALUE' ] = Utils::formatCurrencyBr( $value['VALUE'] );
+			$retorno[ $key ][ 'DATE'  ] = Utils::formatadata_br( $value['DATE'] );
+			$retorno[ $key ][ 'HOUR'  ] = Utils::formatHours( $value['HOUR'] );
+		}
+		return $retorno[0];
 	}						
        
     public function save( $params ) {					    	

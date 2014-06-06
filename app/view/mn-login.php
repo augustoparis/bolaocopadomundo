@@ -21,19 +21,19 @@
 	                <form id="form-login" name="form-login" class="form-signin" >
 						<div class="input-group margin-bottom-sm">
 						  	<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-			                <input id="username" name="username" type="text" class="form-control" placeholder="User" required autofocus >
+			                <input id="username" name="username" type="text" class="form-control" placeholder="<?= L::login_username ?>" required autofocus >
 						</div>							
 						<div class="input-group margin-bottom-sm">
 						  	<span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
-			                <input id="password" name="password" type="password" class="form-control" placeholder="password" required >
+			                <input id="password" name="password" type="password" class="form-control" placeholder="<?= L::login_password ?>" required >
 						</div>
 						<br />
 		                <button class="btn btn-lg btn-primary btn-block" type="submit">Logar</button>
 		                <label class="checkbox pull-left"><!-- <input type="checkbox" value="remember-me"> Remember me --></label>
-		                <a href="#" class="pull-right need-help">Forgot Password?</a><span class="clearfix"></span>
+		                <!-- <a href="#" class="pull-right need-help">Forgot Password?</a><span class="clearfix"></span> -->
 	                </form>
 	            </div>
-				<a href="javascript:void(0)" onclick="OperadoresNovo.show()" class="text-center new-account" >Cadastre-se!</a>
+				<!-- <a href="javascript:void(0)" onclick="OperadoresNovo.show()" class="text-center new-account" >Cadastre-se!</a> -->
 	        </div>
 	    </div>
 	</div>
