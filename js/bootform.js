@@ -38,7 +38,7 @@ var bootForm = {
 	},
 	editarReturn : function(form, data) {
 		$(form + ' input').map(function() {
-			var myElement = $('#'+this.id);
+			var myElement = $(form + ' #'+this.id);
 		    var key = myElement.attr('editar');
 		                 
 		    if ( data.hasOwnProperty( key ) ) {
@@ -47,7 +47,7 @@ var bootForm = {
 		}).get().join();
 		  
 		$(form + ' input[type=checkbox]').map(function() {
-		    var myElement = $('#'+this.id);
+		    var myElement = $(form + ' #'+this.id);
 		    var key = myElement.attr('editar');
 		             
 		    if ( data.hasOwnProperty( key ) ) { 
@@ -57,17 +57,19 @@ var bootForm = {
 		    }
 		}).get().join();
 		  
-		$(form + ' select').map(function() {
-		    var myElement = $('#'+this.id);
-		    var key = myElement.attr('editar');
+		 console.log( form + ' select' ); 
 		  
+		$(form + ' select').map(function() {
+		    var myElement = $(form + ' #'+this.id);
+		    var key = myElement.attr('editar');
+		    
 		    if ( data.hasOwnProperty( key ) ) {
-		    	myElement.val( data[key] );          
+		    	myElement.val( data[key] );
 		    }
 	    }).get().join();        
 		  
 		$(form + ' textarea').map(function() {
-		    var myElement = $('#'+this.id);
+		    var myElement = $(form + ' #'+this.id);
 		    var key = myElement.attr('editar');
 		             
 		    if ( data.hasOwnProperty( key ) ) {

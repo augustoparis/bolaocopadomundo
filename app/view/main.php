@@ -28,6 +28,7 @@
 				
 				include_once('main-games.php');
 				include_once('main-users.php');
+				include_once('main-bets.php');
 				?>
 			</div>
 		</div> 	

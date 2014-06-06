@@ -41,5 +41,10 @@ $(document).ready(function() {
 	$('#menu-users').click(function() { 
 		Menu.init('users'); 
 		Users.init();
-	});		
+	});	
+	
+	$('#menu-bets').click(function() { 
+		Menu.init('bets'); 
+		Bets.init();
+	});
 });

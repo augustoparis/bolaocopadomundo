@@ -2,6 +2,11 @@ html, body {
   height: 100%;
 }
 
+.bg-red td {
+    background-color: #FF0000 !important;
+    color: #FFFFFF;
+}
+
 /* =Form =Validate */
 .input-group-addon:first-child {
 	border-right: 1px solid #CCCCCC;
