@@ -1,7 +1,7 @@
 var Bets = {	
 	init : function() {
 		Bets.all();
-		Bets.allUsers();
+		// Bets.allUsers();
 		Bets.save();
 		Bets.allGames();
 		Bets.change();
@@ -35,7 +35,10 @@ var Bets = {
 		            header, 
 		            values 
 		        );
-		    });  			
+		    }); 
+
+			var vlr = Table.calculateBr('table-bets', '6');
+			$('#table-bets tfoot tr td:nth-child(2) label').text( vlr ); 			
 		}, 'json');
 		
 		Bets.allUsers();
@@ -75,6 +78,10 @@ var Bets = {
 		            values 
 		        );
 		    });  			
+			
+			var vlr = Table.calculateBr('table-bets-all', '6');
+			$('#table-bets-all tfoot tr td:nth-child(2) label').text( vlr );
+			
 		}, 'json');
 	},
 	active : function() {

@@ -76,6 +76,12 @@
 			</thead>
 			<tbody>
 			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="5" align="right" ><label style="text-align:right; width:100%;" >Valor (R$)</label></td>
+					<td><label style="text-align:center; width:100%;" >0,00</label></td>
+				</tr>
+			</tfoot>				
 		</table>	
 	</div>
 	<div class="page-header" >
@@ -89,14 +95,20 @@
 					<!--<th><label>Código</label></th>-->
 					<th><label>Usuário</label></th>
 					<th><label>Seleção</label></th>
-					<th><label>Resultado</label></th>
-					<th><label>Resultado</label></th>
+					<th width='10%' ><label>Resultado</label></th>
+					<th width='10%' ><label>Resultado</label></th>
 					<th><label>Seleção</label></th>
 					<th><label>Valor</label></th>
 				</tr>
 			</thead>
 			<tbody>
 			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="5" align="right" ><label style="text-align:right; width:100%;" >Valor do Bolão (R$)</label></td>
+					<td><label style="text-align:center; width:100%;" >0,00</label></td>
+				</tr>
+			</tfoot>			
 		</table>	
 	</div>
 </div>
