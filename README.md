@@ -11,7 +11,13 @@ Anyone and Everyone is welcome to contribute.
 
 [MIT License © World Cup] (https://github.com/emalherbi/worldcup/blob/master/LICENSE)
 
-## Author
+## Creators
 
-####[Eduardo Malherbi Martins](http://emalherbi.com)
-####[Augusto Paris](https://github.com/augustoparis)
+**Eduardo Malherbi Martins**
+
+- <http://emalherbi.com>
+- <http://github.com/emalherbi>
+
+**Augusto Paris**
+
+- <https://github.com/augustoparis>
