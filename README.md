@@ -13,5 +13,5 @@ Anyone and Everyone is welcome to contribute.
 
 ## Author
 
-[Eduardo Malherbi Martins](http://emalherbi.com)
-[Augusto Paris](https://github.com/augustoparis)
+#[Eduardo Malherbi Martins](http://emalherbi.com)
+#[Augusto Paris](https://github.com/augustoparis)
