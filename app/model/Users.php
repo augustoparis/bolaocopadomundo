@@ -1,7 +1,6 @@
 <?php
   
 require_once("DataBase.php");
-require_once("Crypto.php");
 require_once("Util.php");
   
 class Users
@@ -21,11 +20,7 @@ class Users
         $sql .= " WHERE ACTIVE = " . $params['active'];
         $sql .= " ORDER BY USERS.NAME ";
         
-		$retorno = $this->database->select_sql( $sql );
-		foreach ($retorno as $key => $value) {
-			$retorno[ $key ][ 'PASSWORD' ] = Crypto::decode( $value['PASSWORD'] );
-		}
-		return $retorno;
+		return $this->database->select_sql( $sql );
 	}  
 	
 	public function edit( $params ) {
@@ -36,7 +31,6 @@ class Users
         $sql .= " WHERE ID_USER = " . $code;
 			 
        	$r = $this->database->select_sql( $sql );
-		$r[0]['PASSWORD'] = Crypto::decode($r[0]['PASSWORD']);
 		return $r[0];
 	}		
 
@@ -86,7 +80,7 @@ class Users
     	$name  			= utf8_decode( $params['name'] );		
  		$email 	 		= utf8_decode( $params['email'] );		
 		$username 		= strtoupper(utf8_decode( $params['username'] ));
-    	$password 		= Crypto::encode(strtoupper(utf8_decode( $params['password'] )));
+    	$password 		= strtoupper(utf8_decode( $params['password'] ));
     	$active 		= utf8_decode( $params['active'] );
     	$access_level	= utf8_decode( $params['access_level'] );
     	

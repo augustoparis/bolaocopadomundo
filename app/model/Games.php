@@ -1,7 +1,6 @@
 <?php
   
 require_once("DataBase.php");
-require_once("Crypto.php");
 require_once("Util.php");
   
 class Games

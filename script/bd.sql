@@ -3,7 +3,7 @@ DELIMITER ;
 CREATE DATABASE  IF NOT EXISTS `BOLAO`;
 USE `BOLAO`;
 
--- INSERT INTO `BOLAO`.`USERS` (`NAME`, `EMAIL`, `USERNAME`, `PASSWORD`, `ACTIVE`, `ACCESS_LEVEL`) VALUES ('Administrador', 'adm@bolao.com.br', 'ADM', '55', '1', '2');
+-- INSERT INTO `BOLAO`.`USERS` (`NAME`, `EMAIL`, `USERNAME`, `PASSWORD`, `ACTIVE`, `ACCESS_LEVEL`) VALUES ('Administrador', 'adm@bolao.com.br', 'ADM', 'A', '1', '2');
 
 -- --------------------------------------------------------------------------------
 -- TABLES
