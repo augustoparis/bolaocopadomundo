@@ -16,7 +16,7 @@ Anyone and Everyone is welcome to contribute.
 **Eduardo Malherbi Martins**
 
 - <http://emalherbi.com>
-- <http://github.com/emalherbi>
+- <https://github.com/emalherbi>
 
 **Augusto Paris**
 
