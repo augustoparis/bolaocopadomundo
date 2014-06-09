@@ -1,4 +1,4 @@
-bolaocopadomundo
-================
+World Cup Brazil 2014
+=====================
 
-Bolão Copa do Mundo
+Make your bet and play with friends
