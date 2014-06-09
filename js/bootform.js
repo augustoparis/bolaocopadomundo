@@ -37,6 +37,17 @@ var bootForm = {
 		}, 'json');		
 	},
 	editarReturn : function(form, data) {
+		$(form + ' label').map(function() {
+		    if ( this.id != '' ) {
+				var myElement = $(form + ' #'+this.id);
+			    var key = myElement.attr('editar');
+
+			    if ( data.hasOwnProperty( key ) ) {
+			    	myElement.text( data[key] );          
+			    }
+		    }
+		}).get().join();
+
 		$(form + ' input').map(function() {
 			var myElement = $(form + ' #'+this.id);
 		    var key = myElement.attr('editar');
@@ -108,7 +119,7 @@ var bootForm = {
 	},
 	deletar : function(name, id) {
 	    bootbox.dialog({
-	    	message : "Deseja Deletar o Registro?",
+	    	message : "Deseja deletar o registro?",
 	    	title : "Atenção",
 	    	buttons : {
 				success: {

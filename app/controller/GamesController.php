@@ -23,6 +23,15 @@ class GamesController
 		return $this->model->save( $params );
     }
 
+    public function finalized( $params ) {
+   		parse_str( $params['form'], $params );
+    	return $this->model->finalized( $params );
+    }
+    
+    public function finalized_bets( $params ) {
+		return $this->model->finalized_bets( $params );
+    }
+    
     public function remove( $params ) {
 		return $this->model->remove( $params );
     }

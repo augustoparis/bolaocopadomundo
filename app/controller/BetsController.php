@@ -10,10 +10,14 @@ class BetsController
         $this->model = new Bets();
     }
       
-    public function all( $params ) {
+	public function allGames( $params ) {
+		return $this->model->allGames();
+	}
+    
+	public function all( $params ) {
         return $this->model->all( $params );
     }
-	
+    
 	public function allUsers( $params ) {
         return $this->model->allUsers( $params );
     }
@@ -30,10 +34,6 @@ class BetsController
     public function remove( $params ) {
 		return $this->model->remove( $params );
     }
-	
-	public function getGames( $params ) {
-		return $this->model->getGamaes();
-	}
 }
   
 $controller = new BetsController();

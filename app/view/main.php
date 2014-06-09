@@ -1,8 +1,8 @@
 <?php
 	require_once("Session.php");
  	
-	// if ( !Session::validate() ) 
-	//	exit;	
+	if ( !Session::validate() ) 
+		exit;	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,14 +26,18 @@
 				<?php 
 				include_once('mn-start.php'); 
 				
-				include_once('main-games.php');
-				include_once('main-users.php');
+				if ( Session::get('ACCESS_LEVEL') == '2' || Session::get('ACCESS_LEVEL') == '1' ) {
+					if ( Session::get('ACCESS_LEVEL') == '2' ) {
+						include_once('main-users.php');
+					}
+					include_once('main-games.php');
+				}
 				include_once('main-bets.php');
 				?>
 			</div>
 		</div> 	
 	</div>
-	
+
 	<?php include_once('include-js.php'); ?>	
 </body>
 </html>

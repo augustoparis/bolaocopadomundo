@@ -2,9 +2,25 @@ html, body {
   height: 100%;
 }
 
-.bg-red td {
+.bg-red, .bg-red td {
     background-color: #FF0000 !important;
     color: #FFFFFF;
+}
+.bg-green, .bg-green td {
+    background-color: #008000 !important;
+    color: #FFFFFF;
+}
+.bg-black, .bg-black td {
+    background-color: #000000 !important;
+    color: #FFFFFF;
+}
+.bg-user, .bg-user td {
+    background-color: #F2F1F1 !important;
+    color: #000000;
+}
+.bg-winner, .bg-winner td {
+    background-color: #9D9CFF !important;
+    color: #000000;
 }
 
 /* =Form =Validate */

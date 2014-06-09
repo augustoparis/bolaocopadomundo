@@ -3,7 +3,7 @@ var NivelAcesso = {
 		if ( valor == 0 ) 
 			return 'Apostador'
 		else if ( valor == 1 )  
-			return 'Sub Administrador'
+			return 'Gerente'
 		else
 			return 'Administrador';
 	},

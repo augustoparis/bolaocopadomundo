@@ -57,4 +57,8 @@ var Users = {
 	remove : function( id ) {
 		bootForm.deletar('Users', id);
 	}
+//	,
+//	access_level : function(value) {
+//		alert(value);
+//	}
 };

@@ -2,7 +2,7 @@
 
 class DataBase
 {
-	private static $myServer = "Augusto";
+	private static $myServer = "localhost";
 	private static $myUser = "root";
 	private static $myPass = "root";
 	private static $myDB = "BOLAO";

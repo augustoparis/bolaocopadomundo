@@ -1,4 +1,15 @@
-/* Menu Controll */
+/* 
+ * Version : 0.0.1
+ * Development : Eduardo Malherbi Martins
+ * 
+ * CONTROLLER FOR MENU 
+ * 
+ * -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ * 
+ * vs 0.0.1
+ * - CREATE MENU CONTROL 
+ * 
+ * */
 var Menu =
 {
     hideAll: function() {

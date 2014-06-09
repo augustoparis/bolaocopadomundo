@@ -29,8 +29,11 @@ $(document).ready(function() {
 	Login.init();
 	
 	Menu.init('start'); 
+	Start.init();		 
+
 	$('#menu-start').click(function() { 
 		Menu.init('start'); 
+		Start.init();		 
 	});		
 	
 	$('#menu-games').click(function() { 

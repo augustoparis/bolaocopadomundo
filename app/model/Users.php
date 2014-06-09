@@ -19,7 +19,8 @@ class Users
         $sql .= " SELECT * ";
         $sql .= " FROM USERS ";
         $sql .= " WHERE ACTIVE = " . $params['active'];
-        	
+        $sql .= " ORDER BY USERS.NAME ";
+        
 		$retorno = $this->database->select_sql( $sql );
 		foreach ($retorno as $key => $value) {
 			$retorno[ $key ][ 'PASSWORD' ] = Crypto::decode( $value['PASSWORD'] );
@@ -43,23 +44,23 @@ class Users
 		$params = utf8_decode($params);
 		
     	$sql  = "";
-        $sql .= " SELECT * FROM OPERADORES ";
-        $sql .= " WHERE USUARIO = '" . $params . "'";
-        $sql .= " ORDER BY ID_OPERADORES ";
+        $sql .= " SELECT * FROM USERS ";
+        $sql .= " WHERE USERS.USERNAME = '" . $params . "'";
+        $sql .= " ORDER BY USERS.ID_USER ";
 			 
        	return $this->database->select_sql( $sql );
 	}
 	
-	// private function emailExiste( $params ) {
-		// $params = utf8_decode($params);
-// 		
-    	// $sql  = "";
-        // $sql .= " SELECT * FROM OPERADORES ";
-        // $sql .= " WHERE EMAIL = '" . $params . "'";
-        // $sql .= " ORDER BY ID_OPERADORES ";
-// 			 
-       	// return $this->database->select_sql( $sql );
-	// }
+	private function emailExist( $params ) {
+		$params = utf8_decode($params);
+		 		
+		$sql  = "";
+		$sql .= " SELECT * FROM USERS ";
+		$sql .= " WHERE USERS.EMAIL = '" . $params . "'";
+		$sql .= " ORDER BY USERS.ID_USER ";
+		 			 
+		return $this->database->select_sql( $sql );
+	}
 	
 	private function validate( $params ) {
 		if ( $params['id_user'] == 0 ) 
@@ -68,9 +69,9 @@ class Users
 			if ( is_array($r) ) 
 				return 'Este usuário já está sendo usado.';
 		
-			//$r = $this->emailExiste( $params['email'] );
-			//if ( is_array($r) ) 
-				//return 'Este endereço de e-mail já está sendo usado.';
+			$r = $this->emailExist( $params['email'] );
+			if ( is_array($r) ) 
+				return 'Este endereço de e-mail já está sendo usado.';
 		}
 		
 		return true;
@@ -80,22 +81,15 @@ class Users
     	if ( is_string($r = $this->validate( $params )) ) {
     		return $r;
     	}
+     	
+    	$id_user 		= utf8_decode( $params['id_user'] );
+    	$name  			= utf8_decode( $params['name'] );		
+ 		$email 	 		= utf8_decode( $params['email'] );		
+		$username 		= strtoupper(utf8_decode( $params['username'] ));
+    	$password 		= Crypto::encode(strtoupper(utf8_decode( $params['password'] )));
+    	$active 		= utf8_decode( $params['active'] );
+    	$access_level	= utf8_decode( $params['access_level'] );
     	
-    	// if ( array_key_exists('operadores-novo', $params) ) {
- 		   	// $params['id_operadores'] = 0;
- 		   	// $params['ativo'] = '1';
-    	// } else {
-    		// $params['email'  ] = Session::get('EMAIL');
-			// $params['usuario'] = Session::get('USUARIO');
-    	// }
-    	
-    	$id_user 	= utf8_decode( $params['id_user'] );
-    	$name  		= utf8_decode( $params['name'] );		
- 		$email 	 	= utf8_decode( $params['email'] );		
-		$username 	= strtoupper(utf8_decode( $params['username'] ));
-    	$password 	= Crypto::encode(strtoupper(utf8_decode( $params['password'] )));
-    	$active 	= utf8_decode( $params['active'] );
-    	    	    	
     	$params = array(
     		'ID_USER' 		=> $id_user,
     		'NAME' 			=> "'$name'",
@@ -103,7 +97,7 @@ class Users
     		'USERNAME' 		=> "'$username'",
     		'PASSWORD' 		=> "'$password'",
     	    'ACTIVE' 		=> $active,
-    	    'ACCESS_LEVEL' 	=> '2'
+    	    'ACCESS_LEVEL' 	=> $access_level
     	);
     	
     	return (int) $this->database->execute_sp('SX_USERS', $params);

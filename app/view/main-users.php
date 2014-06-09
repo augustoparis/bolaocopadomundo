@@ -40,7 +40,15 @@
 						</div>
 						<div class="checkbox">
 							<label for="active" ><input id="active" name="active" type="checkbox" value="1" checked editar="ACTIVE" > Ativo</label>
-						</div>						
+						</div>	
+						<div class="form-group">
+							<label for="access_level">Nível de Acesso</label>
+							<div class="input-group margin-bottom-sm">
+								<input type="radio" name="access_level" value="0" checked > Apostador<br/>
+								<input type="radio" name="access_level" value="1" > Gerente<br/>
+								<input type="radio" name="access_level" value="2" > Administrador<br/>
+							</div>							
+						</div>
 						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Salvar</button>
 						<button type="reset" class="btn btn-primary" onclick="Users.reset()" ><span class="glyphicon glyphicon-plus"></span> Novo</button>
 					</form>

@@ -10,8 +10,6 @@
 	<?php include_once('include-css.php'); ?>	
 </head>
 <body>
-	<?php // include_once('main-operadores-novo.php'); ?>
-		
 	<div class="container">
 	    <div class="row">
 	        <div class="col-sm-6 col-md-4 col-md-offset-4">
