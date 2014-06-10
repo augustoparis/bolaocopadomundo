@@ -108,13 +108,13 @@
 					<th><label><?= L::games_team2; ?></label></th>
 					<th width='10%' ><label><?= L::games_value; ?></label></th>
 					<th width='10%' ><label><?= L::games_date; ?></label></th>
-					<th width='5%' ><label><?= L::games_hour; ?></label></th>
-					<th width='5%' ><label><?= L::games_status; ?></label></th>
-					<th width='6%' ><label><input id="active" name="active" type="checkbox" value="1" onclick="Games.active()" checked > <?= L::checkbox_active; ?></label></th>
-					<th width='5%' ><label><?= L::button_finalized_bets; ?></label></th>
-					<th width='5%' ><label><?= L::button_finalized; ?></label></th>
-					<th width='5%' ><label><?= L::button_edit; ?></label></th>
-					<th width='5%' ><label><?= L::button_delete; ?></label></th>
+					<th width='5%'  ><label><?= L::games_hour; ?></label></th>
+					<th width='5%'  ><label><?= L::games_status; ?></label></th>
+					<th width='6%'  ><label><input id="active" name="active" type="checkbox" value="1" onclick="Games.active()" checked > <?= L::checkbox_active; ?></label></th>
+					<th width='5%'  ><label><?= L::button_end_bets; ?></label></th>
+					<th width='5%'  ><label><?= L::button_end; ?></label></th>
+					<th width='5%'  ><label><?= L::button_edit; ?></label></th>
+					<th width='5%'  ><label><?= L::button_delete; ?></label></th>
 				</tr>
 			</thead>
 			<tbody>

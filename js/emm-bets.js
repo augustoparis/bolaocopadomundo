@@ -174,6 +174,9 @@ var Bets = {
 		Bets.all();
 	},
 	reset : function() {
+		$('#form-bets #lb-team1').text('Seleção 1');
+		$('#form-bets #lb-team2').text('Seleção 2');		
+		
 		bootForm.resetar('Bets');
 	},	
 	insert : function() {

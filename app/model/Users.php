@@ -20,8 +20,12 @@ class Users
         $sql .= " WHERE ACTIVE = " . $params['active'];
         $sql .= " ORDER BY USERS.NAME ";
         
-		return $this->database->select_sql( $sql );
-	}  
+		$retorno = $this->database->select_sql( $sql );
+		foreach ($retorno as $key => $value) {
+			$retorno[ $key ][ 'NAME' ] = utf8_encode( $value['NAME'] );
+		}
+		return $retorno;
+    }  
 	
 	public function edit( $params ) {
 		$code = utf8_decode($params['code']);
@@ -30,9 +34,12 @@ class Users
         $sql .= " SELECT * FROM USERS ";
         $sql .= " WHERE ID_USER = " . $code;
 			 
-       	$r = $this->database->select_sql( $sql );
-		return $r[0];
-	}		
+		$retorno = $this->database->select_sql( $sql );
+		foreach ($retorno as $key => $value) {
+			$retorno[ $key ][ 'NAME' ] = utf8_encode( $value['NAME'] );
+		}
+		return $retorno[0];
+    }		
 
 	private function userExist( $params ) {
 		$params = utf8_decode($params);

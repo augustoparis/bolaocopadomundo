@@ -26,12 +26,10 @@
 			                <input id="password" name="password" type="password" class="form-control" placeholder="<?= L::login_password ?>" required >
 						</div>
 						<br />
-		                <button class="btn btn-lg btn-primary btn-block" type="submit">Logar</button>
-		                <label class="checkbox pull-left"><!-- <input type="checkbox" value="remember-me"> Remember me --></label>
-		                <!-- <a href="#" class="pull-right need-help">Forgot Password?</a><span class="clearfix"></span> -->
+		                <button class="btn btn-lg btn-primary btn-block" type="submit"><?= L::button_login ?></button>
+		                <label class="checkbox pull-left"></label>
 	                </form>
 	            </div>
-				<!-- <a href="javascript:void(0)" onclick="OperadoresNovo.show()" class="text-center new-account" >Cadastre-se!</a> -->
 	        </div>
 	    </div>
 	</div>

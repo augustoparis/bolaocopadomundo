@@ -21,20 +21,14 @@
 						</div>
 						<div class="form-inline">
 							<div class="form-group" >
-								<label id="lb-team1" name="lb-team1" for="result1" editar="TEAM1" ><?= L::bets_result1; ?></label>
+								<label id="lb-team1" name="lb-team1" for="result1" editar="TEAM1" ><?= L::bets_team1; ?></label>
 								<div class="input-group margin-bottom-sm">
 									<span class="input-group-addon"><i class="fa fa-flag fa-fw"></i></span>
 									<input type="text" class="form-control" id="result1" name="result1" required editar="RESULT1" minlength="1" maxlength="2" onkeydown="Mask.mascara(this, Mask.mnumeros)" >
 								</div>							
 							</div>
 							<div class="form-group" >
-								<label> </label>
-								<div class="input-group margin-bottom-sm" style="padding-top:6px;" >
-								  	<span class="input-group-addon" style="border-left:1px solid #CCCCCC;" ><i class="glyphicon glyphicon-remove"></i></span>
-								</div>							
-							</div>
-							<div class="form-group" >
-								<label  id="lb-team2"for="result2" for="result2" editar="TEAM2" ><?= L::bets_result2; ?></label>
+								<label  id="lb-team2"for="result2" for="result2" editar="TEAM2" ><?= L::bets_team2; ?></label>
 								<div class="input-group margin-bottom-sm">
 								  	<span class="input-group-addon"><i class="fa fa-flag fa-fw"></i></span>
 									<input type="text" class="form-control" id="result2" name="result2" required editar="RESULT2" minlength="1" maxlength="2" onkeydown="Mask.mascara(this, Mask.mnumeros)" >
@@ -51,17 +45,17 @@
 	</div> 
 	
 	<div class="page-header" >
-		<h2>Suas Apostas</h2>
+		<h2><?= L::bets_title1 ?></h2>
 	</div>
 	<div class="table-responsive">
 		<table id='table-bets' class="table table-bordered">
 			<thead>
 				<tr>
-					<th><label>Seleção</label></th>
-					<th width='15%' ><label>Resultado</label></th>
-					<th width='15%' ><label>Resultado</label></th>
-					<th><label>Seleção</label></th>
-					<th width='5%' ><label>Valor</label></th>
+					<th><label><?= L::bets_team ?></label></th>
+					<th width='15%' ><label><?= L::bets_result ?></label></th>
+					<th width='15%' ><label><?= L::bets_result ?></label></th>
+					<th><label><?= L::bets_team ?></label></th>
+					<th width='5%' ><label><?= L::bets_value ?></label></th>
 					<th width='5%' ><label><?= L::button_edit; ?></label></th>
 					<th width='5%' ><label><?= L::button_delete; ?></label></th>
 				</tr>
@@ -79,18 +73,18 @@
 	<div class="page-header" ></div>
 	
 	<div class="page-header" >
-		<h2>Todas Apostas</h2>
+		<h2><?= L::bets_title2 ?></h2>
 	</div>
 	<div class="table-responsive">
 		<table id='table-bets-all' class="table table-bordered">
 			<thead>
 				<tr>
-					<th><label>Usuário</label></th>
-					<th><label>Seleção</label></th>
-					<th width='10%' ><label>Resultado</label></th>
-					<th width='10%' ><label>Resultado</label></th>
-					<th><label>Seleção</label></th>
-					<th><label>Valor</label></th>
+					<th><label><?= L::bets_user ?></label></th>
+					<th><label><?= L::bets_team ?></label></th>
+					<th width='10%' ><label><?= L::bets_result ?></label></th>
+					<th width='10%' ><label><?= L::bets_result ?></label></th>
+					<th><label><?= L::bets_team ?></label></th>
+					<th><label><?= L::bets_value ?></label></th>
 				</tr>
 			</thead>
 			<tbody>

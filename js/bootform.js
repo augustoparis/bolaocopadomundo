@@ -68,8 +68,6 @@ var bootForm = {
 		    }
 		}).get().join();
 		  
-		 console.log( form + ' select' ); 
-		  
 		$(form + ' select').map(function() {
 		    var myElement = $(form + ' #'+this.id);
 		    var key = myElement.attr('editar');

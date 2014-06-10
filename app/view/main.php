@@ -14,6 +14,7 @@
 	<meta name="author" content="">
 
 	<?php include_once('include-css.php'); ?>	
+	<?php include_once('include-js.php'); ?>	
 </head>
 <body>
 	<div class="container-fluid" >	
@@ -37,7 +38,5 @@
 			</div>
 		</div> 	
 	</div>
-
-	<?php include_once('include-js.php'); ?>	
 </body>
 </html>

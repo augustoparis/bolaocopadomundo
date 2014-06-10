@@ -1,7 +1,7 @@
 <div id="div-users" style="display: none;" >
 
 	<div class="page-header" >
-		<h1>Cadastro Usuários</h1>
+		<h1><?= L::user_title ?></h1>
 	</div>	
 
 	<div class="row">
@@ -11,46 +11,46 @@
 					<form id="form-users" role="form" >	
 						<input type="hidden" class="form-control" id="id_user" name="id_user" required editar="ID_USER" >
 						<div class="form-group">
-							<label for="name">Nome</label>
+							<label for="name"><?= L::user_name ?></label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-smile-o fa-fw"></i></span>
 								<input type="text" class="form-control" id="name" name="name" required editar="NAME" minlength="2" >
 							</div>							
 						</div>
 						<div class="form-group">
-							<label for="email">Email</label>
+							<label for="email"><?= L::user_email ?></label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
 								<input type="email" class="form-control" id="email" name="email" required editar="EMAIL" minlength="2" >
 							</div>							
 						</div>
 						<div class="form-group">
-							<label for="username">Usuário</label>
+							<label for="username"><?= L::user_username ?></label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
 								<input type="text" class="form-control" id="username" name="username" required editar="USERNAME" maxlength="10" minlength="5" >
 							</div>							
 						</div>
 						<div class="form-group">
-							<label for="password">Senha</label>
+							<label for="password"><?= L::user_password ?></label>
 							<div class="input-group margin-bottom-sm">
 							  	<span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
 								<input type="password" class="form-control" id="password" name="password" required editar="PASSWORD" maxlength="10" minlength="5" >
 							</div>							
 						</div>
 						<div class="checkbox">
-							<label for="active" ><input id="active" name="active" type="checkbox" value="1" checked editar="ACTIVE" > Ativo</label>
+							<label for="active" ><input id="active" name="active" type="checkbox" value="1" checked editar="ACTIVE" > <?= L::checkbox_active ?></label>
 						</div>	
 						<div class="form-group">
-							<label for="access_level">Nível de Acesso</label>
+							<label for="access_level"><?= L::user_access_level ?></label>
 							<div class="input-group margin-bottom-sm">
-								<input type="radio" name="access_level" value="0" checked > Apostador<br/>
-								<input type="radio" name="access_level" value="1" > Gerente<br/>
-								<input type="radio" name="access_level" value="2" > Administrador<br/>
+								<input type="radio" name="access_level" value="0" checked > <?= L::user_punter ?><br/>
+								<input type="radio" name="access_level" value="1" > <?= L::user_manager ?><br/>
+								<input type="radio" name="access_level" value="2" > <?= L::user_administrator ?><br/>
 							</div>							
 						</div>
-						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Salvar</button>
-						<button type="reset" class="btn btn-primary" onclick="Users.reset()" ><span class="glyphicon glyphicon-plus"></span> Novo</button>
+						<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> <?= L::button_save ?></button>
+						<button type="reset" class="btn btn-primary" onclick="Users.reset()" ><span class="glyphicon glyphicon-plus"></span> <?= L::button_new ?></button>
 					</form>
 				</div>
 			</div>
@@ -62,14 +62,14 @@
 			<thead>
 				<tr>
 					<th width='4%' ><div onclick="Users.insert()" class="btn btn-primary" ><span class="glyphicon glyphicon-plus"></span></div></th>
-					<th><label>Nome</label></th>
-					<th><label>Email</label></th>
-					<th><label>Usuário</label></th>
-					<th><label>Senha</label></th>
-					<th><label>Nível Acesso</label></th>
-					<th width='6%' ><label><input id="active" name="active" type="checkbox" value="1" onclick="Users.active()" checked > Ativo</label></th>
-					<th width='5%' ><label>Editar</label></th>
-					<th width='5%' ><label>Deletar</label></th>
+					<th><label><?= L::user_name ?></label></th>
+					<th><label><?= L::user_email ?></label></th>
+					<th><label><?= L::user_username ?></label></th>
+					<th><label><?= L::user_password ?></label></th>
+					<th><label><?= L::user_access_level ?></label></th>
+					<th width='6%' ><label><input id="active" name="active" type="checkbox" value="1" onclick="Users.active()" checked > <?= L::checkbox_active ?></label></th>
+					<th width='5%' ><label><?= L::button_edit ?></label></th>
+					<th width='5%' ><label><?= L::button_delete ?></label></th>
 				</tr>
 			</thead>
 			<tbody>

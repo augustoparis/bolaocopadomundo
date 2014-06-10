@@ -47,8 +47,8 @@ class Games
        
     public function save( $params ) {					    	
     	$id_game 		= utf8_decode( $params['id_game'] );
-    	$team1 			= utf8_decode( $params['team1'] );		
- 		$team2 	 		= utf8_decode( $params['team2'] );		
+    	$team1 			= utf8_decode( strtoupper(Utils::substituirCaracteresEspeciais($params['team1'])) );		
+ 		$team2 	 		= utf8_decode( strtoupper(Utils::substituirCaracteresEspeciais($params['team2'])) );		
 		$value 			= utf8_decode( Utils::formatCurrency($params['value']) );
     	$date 			= utf8_decode( Utils::formatadata_sql($params['date']) );
     	$hour 			= utf8_decode( $params['hour'] . ':00' );

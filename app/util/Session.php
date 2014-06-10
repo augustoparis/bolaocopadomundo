@@ -26,7 +26,7 @@ class Session {
 	public static function validate() {
 		if ( empty($_SESSION) ) {
 			echo "<div style='color:#FF0000; font-style:italic; margin:10px auto 0; text-align:center; width:300px;' >";
-			echo "<p>Usuário não está logado!</p>";	
+			echo utf8_decode("<p>". L::session_msg ."</p>");	
 			echo "</div>";			
 			echo "<script>";
 			echo "window.setTimeout(function() {"; 
