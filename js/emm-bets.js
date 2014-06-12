@@ -48,7 +48,7 @@ var Bets = {
 
 				var tr = '';
 				tr += '<tr class="'+Status.color( d[5] )+'" >';
-				tr += '<td colspan="8" >'+d[1]+' '+r1+' x '+r2+' '+d[2]+' - '+d[3]+' ás '+d[4]+' - <label>'+Status.descricao( d[5] )+'</label></td>';
+				tr += '<td colspan="9" >'+d[1]+' '+r1+' x '+r2+' '+d[2]+' - '+d[3]+' ás '+d[4]+' - <label>'+Status.descricao( d[5] )+'</label></td>';
 				tr += '</tr>';
 				
 		        $( id ).append( tr );
