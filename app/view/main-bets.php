@@ -56,6 +56,8 @@
 					<th width='15%' ><label><?= L::bets_result ?></label></th>
 					<th><label><?= L::bets_team ?></label></th>
 					<th width='5%' ><label><?= L::bets_value ?></label></th>
+					<th width='5%' ><label><?= L::bets_pay ?></label></th>
+					<th width='5%' ><label><?= L::bets_value ?></label></th>
 					<th width='5%' ><label><?= L::button_edit; ?></label></th>
 					<th width='5%' ><label><?= L::button_delete; ?></label></th>
 				</tr>
@@ -65,6 +67,8 @@
 			<tfoot>
 				<tr>
 					<td colspan="4" align="right" ><label style="text-align:right; width:100%;" >Total (R$)</label></td>
+					<td><label style="text-align:center; width:100%;" >0,00</label></td>
+					<td align="center" ><label style="text-align:center; width:100%;" >-</label></td>
 					<td><label style="text-align:center; width:100%;" >0,00</label></td>
 				</tr>
 			</tfoot>				
@@ -85,6 +89,8 @@
 					<th width='10%' ><label><?= L::bets_result ?></label></th>
 					<th><label><?= L::bets_team ?></label></th>
 					<th><label><?= L::bets_value ?></label></th>
+					<th><label><?= L::bets_pay ?></label></th>
+					<th><label><?= L::bets_value ?></label></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -92,6 +98,8 @@
 			<tfoot>
 				<tr>
 					<td colspan="5" align="right" ><label style="text-align:right; width:100%;" >Total (R$)</label></td>
+					<td><label style="text-align:center; width:100%;" >0,00</label></td>
+					<td align="center" ><label style="text-align:center; width:100%;" >-</label></td>
 					<td><label style="text-align:center; width:100%;" >0,00</label></td>
 				</tr>
 			</tfoot>			

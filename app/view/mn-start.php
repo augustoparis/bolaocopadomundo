@@ -38,7 +38,9 @@
 					<th width='10%' ><label>Resultado</label></th>
 					<th width='10%' ><label>Resultado</label></th>
 					<th><label>Seleção</label></th>
-					<th><label>Valor</label></th>
+					<th width='5%' ><label>Valor</label></th>
+					<th width='5%' ><label>Pago</label></th>
+					<th width='5%' ><label>Valor</label></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -46,6 +48,8 @@
 			<tfoot>
 				<tr>
 					<td colspan="5" align="right" ><label style="text-align:right; width:100%;" >Total (R$)</label></td>
+					<td><label style="text-align:center; width:100%;" >0,00</label></td>
+					<td align="center" ><label style="text-align:center; width:100%;" >-</label></td>
 					<td><label style="text-align:center; width:100%;" >0,00</label></td>
 				</tr>
 			</tfoot>			

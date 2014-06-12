@@ -38,6 +38,7 @@ var Bets = {
 			'active'  : $(id + ' #active').val()
 		};
 		var total = 0;
+		var total_pay = 0;
 		$.post('?m=controller&c=BetsController', params, function( data ) {
 			$.each( data, function( k, v ) {
 				var d = k.split("|"); 
@@ -47,14 +48,19 @@ var Bets = {
 
 				var tr = '';
 				tr += '<tr class="'+Status.color( d[5] )+'" >';
-				tr += '<td colspan="7" >'+d[1]+' '+r1+' x '+r2+' '+d[2]+' - '+d[3]+' ás '+d[4]+' - <label>'+Status.descricao( d[5] )+'</label></td>';
+				tr += '<td colspan="8" >'+d[1]+' '+r1+' x '+r2+' '+d[2]+' - '+d[3]+' ás '+d[4]+' - <label>'+Status.descricao( d[5] )+'</label></td>';
 				tr += '</tr>';
 				
 		        $( id ).append( tr );
 
 		        var vlr = 0;
+		        var vlr_pay = 0;
 				$.each( v, function( key, values ) {	
-					vlr += Number(values.VALUE);
+					var VALUE = Number(values.VALUE);
+					var VALUE_PAY = (values.PAY == 0) ? 0 : VALUE;
+
+					vlr += VALUE;
+					vlr_pay += VALUE_PAY;
 
 					var EDIT = '';
 					if ( d[5] == 0 ) 
@@ -77,7 +83,9 @@ var Bets = {
 			            "RESULT1" 		: values.RESULT1,
 			            "RESULT2" 		: values.RESULT2,
 			            "TEAM2" 		: values.TEAM2,
-				        "VALUE"			: Money.formatBr(values.VALUE),
+				        "VALUE"			: Money.formatBr(VALUE),
+				        "PAY"			: (values.PAY == 0) ? 'Não' : 'Sim',				        
+				        "VALUE_PAY"		: Money.formatBr(VALUE_PAY),
 			            "EDIT"  		: EDIT,
 			            "REMOVE" 		: REMOVE
 			        };
@@ -88,17 +96,21 @@ var Bets = {
 			        );
 			    });
 				total += vlr;
+				total_pay += vlr_pay;
 				
 				var tr = '';
 				tr += '<tr>';
 				tr += '<td colspan="4" align="right" ><label style="text-align:right; width:100%;" >Valor (R$)</label></td>';
 				tr += '<td><label style="text-align:center; width:100%;" >'+Money.formatBr(vlr)+'</label></td>';
+				tr += '<td align="center" ><label style="text-align:center; width:100%;" >-</label></td>';
+				tr += '<td><label style="text-align:center; width:100%;" >'+Money.formatBr(vlr_pay)+'</label></td>';
 				tr += '</tr>';
 				
 		        $( id ).append( tr );
 			});	
 			
 			$('#table-bets tfoot tr td:nth-child(2) label').text( Money.formatBr(total) ); 			
+			$('#table-bets tfoot tr td:nth-child(4) label').text( Money.formatBr(total_pay) ); 			
 		}, 'json');
 		
 		Bets.allUsers();
@@ -112,6 +124,7 @@ var Bets = {
 			'active'  : $(id + ' #active').val()
 		};
 		var total = 0;
+		var total_pay = 0;
 		$.post('?m=controller&c=BetsController', params, function( data ) {
 			$.each( data, function( k, v ) {
 				var d = k.split("|"); 
@@ -121,15 +134,20 @@ var Bets = {
 				
 				var tr = '';
 				tr += '<tr class="'+Status.color( d[5] )+'" >';
-				tr += '<td colspan="7" >'+d[1]+' '+r1+' x '+r2+' '+d[2]+' - '+d[3]+' ás '+d[4]+' - <label>'+Status.descricao( d[5] )+'</label></td>';
+				tr += '<td colspan="8" >'+d[1]+' '+r1+' x '+r2+' '+d[2]+' - '+d[3]+' ás '+d[4]+' - <label>'+Status.descricao( d[5] )+'</label></td>';
 				tr += '</tr>';
 				
 		        $( id ).append( tr );
 
 		        var vlr = 0;
+		        var vlr_pay = 0;
 				$.each( v, function( key, values ) {	
-					vlr += Number(values.VALUE);
+					var VALUE = Number(values.VALUE);
+					var VALUE_PAY = (values.PAY == 0) ? 0 : VALUE;
 
+					vlr += VALUE;
+					vlr_pay += VALUE_PAY;
+					
 					var cls = '';
 					if ( $('#div-bets #id_user').val() == values.ID_USER )
 						cls = 'bg-user';
@@ -147,7 +165,9 @@ var Bets = {
 			            "RESULT1" 		: values.RESULT1,
 			            "RESULT2" 		: values.RESULT2,
 			            "TEAM2" 		: values.TEAM2,
-				        "VALUE"			: Money.formatBr(values.VALUE)
+				        "VALUE"			: Money.formatBr(VALUE),
+				        "PAY"			: (values.PAY == 0) ? 'Não' : 'Sim',				        
+				        "VALUE_PAY"		: Money.formatBr(VALUE_PAY)
 			        };
 			        bootTable.addItem( 
 			            id, 
@@ -156,17 +176,21 @@ var Bets = {
 			        );
 			    });
 				total += vlr;
+				total_pay += vlr_pay;
 				
 				var tr = '';
 				tr += '<tr>';
 				tr += '<td colspan="5" align="right" ><label style="text-align:right; width:100%;" >Valor (R$)</label></td>';
 				tr += '<td><label style="text-align:center; width:100%;" >'+Money.formatBr(vlr)+'</label></td>';
+				tr += '<td align="center" ><label style="text-align:center; width:100%;" >-</label></td>';
+				tr += '<td><label style="text-align:center; width:100%;" >'+Money.formatBr(vlr_pay)+'</label></td>';
 				tr += '</tr>';
 				
 		        $( id ).append( tr );
 			});	
 			
 			$('#table-bets-all tfoot tr td:nth-child(2) label').text( Money.formatBr(total) ); 			
+			$('#table-bets-all tfoot tr td:nth-child(4) label').text( Money.formatBr(total_pay) ); 			
 		}, 'json');
 	},
 	active : function() {

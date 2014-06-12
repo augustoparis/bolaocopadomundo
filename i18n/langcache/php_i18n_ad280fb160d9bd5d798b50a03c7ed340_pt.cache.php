@@ -44,6 +44,7 @@ const bets_team2 = 'Seleção 2';
 const bets_value = 'Valor';
 const bets_result1 = 'Resultado 1';
 const bets_result2 = 'Resultado 2';
+const bets_pay = 'Pago';
 const bets_title1 = 'Suas Apostas';
 const bets_title2 = 'Todas Apostas';
 const bets_team = 'Seleção';

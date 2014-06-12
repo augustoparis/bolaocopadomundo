@@ -102,6 +102,7 @@ class Bets
 		$id_user	= Session::get( 'ID_USER' );
     	$result1	= utf8_decode( $params['result1'] );		
  		$result2 	= utf8_decode( $params['result2'] );		
+		$pay	 	= utf8_decode( '0' );
 		$active 	= utf8_decode( '1' );
  		
     	$params = array(
@@ -110,6 +111,7 @@ class Bets
     		'ID_GAME' 	=> $id_game,
     		'RESULT1' 	=> $result1,
     		'RESULT2' 	=> $result2,
+    		'PAY' 		=> $pay,
     		'ACTIVE' 	=> $active
     	);
 				
