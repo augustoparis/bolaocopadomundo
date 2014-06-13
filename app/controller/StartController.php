@@ -17,6 +17,11 @@ class StartController
     public function all( $params ) {
         return $this->model->all( $params );
     }
+
+    public function pay_change( $params ) {
+    	$params = $params['form'];
+    	return $this->model->pay_change( $params );
+    }
 }
   
 $controller = new StartController();

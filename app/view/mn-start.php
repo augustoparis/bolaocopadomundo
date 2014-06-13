@@ -26,6 +26,8 @@
 	</div>
 
 	<input type="hidden" class="form-control" id="id_user" name="id_user" value="<?= Session::get('ID_USER'); ?>" > 
+	<input type="hidden" class="form-control" id="access_level" name="access_level" value="<?= Session::get('ACCESS_LEVEL'); ?>" > 
+
 	<div class="page-header" >
 		<h2>Todas Apostas</h2>
 	</div>
@@ -39,7 +41,7 @@
 					<th width='10%' ><label>Resultado</label></th>
 					<th><label>Seleção</label></th>
 					<th width='5%' ><label>Valor</label></th>
-					<th width='5%' ><label>Pago</label></th>
+					<th width='10%' ><label>Pago</label></th>
 					<th width='5%' ><label>Valor</label></th>
 				</tr>
 			</thead>

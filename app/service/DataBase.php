@@ -2,10 +2,10 @@
 
 class DataBase
 {
-	private static $myServer = "localhost";
-	private static $myUser = "root";
-	private static $myPass = "root";
-	private static $myDB = "BOLAO";
+	private static $myServer = "dbmy0103.whservidor.com";
+	private static $myUser = "emalherbi_11";
+	private static $myPass = "onDudu86";
+	private static $myDB = "emalherbi_11";
 	private static $dbhandle;
 
 	private function connect() {

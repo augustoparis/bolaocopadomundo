@@ -106,6 +106,22 @@ var Start = {
 					if ( (values.RESULT1 == r1) && (values.RESULT2 == r2) )
 						cls = 'bg-winner';
 					
+					var PAY = (values.PAY == 0) ? 'Não' : 'Sim';
+					if ( $('#div-start #access_level').val() == '2' ) {
+						var sel = "";
+						
+						PAY  = '';
+						PAY += '<select id="pay_'+values.ID_BET+'" name="pay_'+values.ID_BET+'" class="form-control" onchange="Start.pay_change('+values.ID_BET+')" >';
+						
+						sel = (values.PAY == 0) ? 'selected' : '';
+						PAY += '<option value="0" '+sel+'>Não</option>';	
+						
+						sel = (values.PAY == 0) ? '' : 'selected';
+						PAY += '<option value="1" '+sel+'>Sim</option>';	
+
+						PAY += '</select>';
+					}
+					
 					var header = { 
 			            "CODE" : values.ID_BET,
 			            "class" : cls
@@ -117,7 +133,7 @@ var Start = {
 			            "RESULT2" 		: values.RESULT2,
 			            "TEAM2" 		: values.TEAM2,
 				        "VALUE"			: Money.formatBr(VALUE),
-				        "PAY"			: (values.PAY == 0) ? 'Não' : 'Sim',				        
+				        "PAY"			: PAY,				        
 				        "VALUE_PAY"		: Money.formatBr(VALUE_PAY)
 			        };
 			        bootTable.addItem( 
@@ -143,5 +159,22 @@ var Start = {
 			$('#table-all tfoot tr td:nth-child(2) label').text( Money.formatBr(total) );
 			$('#table-all tfoot tr td:nth-child(4) label').text( Money.formatBr(total_pay) ); 			
 		}, 'json');
+	},
+	pay_change : function(id_bet) {		
+		var pay = Select.option_select_attr('pay_'+id_bet, 'value');
+		var params = { 
+			'method' : 'pay_change',
+			'form' 	 : {  
+				'id_bet' : id_bet,
+				'pay' : pay			
+			}
+		};
+		$.post('?m=controller&c=StartController', params, function( data ) {
+			if ( data == true ) {
+				console.log( 'update ... ' );
+			}
+		}, 'json');
+
+		return false;  
 	}
 };
