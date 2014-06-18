@@ -1,10 +1,10 @@
 <?php
 	// include i18n class and initialize it
 	require_once 'i18n.class.php';
-	$i18n = new i18n( I18N_LANG . DS . 'lang_{LANGUAGE}.ini', I18N_LANG_CACHE, 'en' );
+	$i18n = new i18n( I18N_LANG . DS . 'lang_{LANGUAGE}.ini', I18N_LANG_CACHE, 'pt' );
 	// Parameters: language file path, cache dir, default language (all optional)
 
-	// $i18n->setForcedLang('en'); // force english, even if another user language is available
+	$i18n->setForcedLang('en'); // force english, even if another user language is available
 
 	// init object: load language files, parse them if not cached, and so on.
 	$i18n->init();

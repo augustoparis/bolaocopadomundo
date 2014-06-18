@@ -1,17 +1,17 @@
 <div id="div-start" style="display:none;" >
 
 	<div class="page-header" >
-		<h1 id="title"><?= L::welcome; ?></h1>
+		<h1 id="title"><?= L::view_start_title; ?></h1>
 	</div>
 	<div class="page-header" >
-		<h2>Ganhadores</h2>
+		<h2><?= L::view_start_winner_title; ?></h2>
 	</div>
 	<div class="table-responsive">
 		<table id='table-winners' class="table table-bordered">
 			<thead>
 				<tr>
-					<th><label>Usuário</label></th>
-					<th width='10%' ><label>Valor (R$)</label></th>
+					<th><label><?= L::view_start_winner_user; ?></label></th>
+					<th width='10%' ><label><?= L::view_start_winner_value; ?></label></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -29,20 +29,20 @@
 	<input type="hidden" class="form-control" id="access_level" name="access_level" value="<?= Session::get('ACCESS_LEVEL'); ?>" > 
 
 	<div class="page-header" >
-		<h2>Todas Apostas</h2>
+		<h2><?= L::view_start_bets_title; ?></h2>
 	</div>
 	<div class="table-responsive">
 		<table id='table-all' class="table table-bordered">
 			<thead>
 				<tr>
-					<th><label>Usuário</label></th>
-					<th><label>Seleção</label></th>
-					<th width='10%' ><label>Resultado</label></th>
-					<th width='10%' ><label>Resultado</label></th>
-					<th><label>Seleção</label></th>
-					<th width='5%' ><label>Valor</label></th>
-					<th width='10%' ><label>Pago</label></th>
-					<th width='5%' ><label>Valor</label></th>
+					<th><label><?= L::view_start_bets_user; ?></label></th>
+					<th><label><?= L::view_start_bets_team; ?></label></th>
+					<th width='10%' ><label><?= L::view_start_bets_score; ?></label></th>
+					<th width='10%' ><label><?= L::view_start_bets_score; ?></label></th>
+					<th><label><?= L::view_start_bets_team; ?></label></th>
+					<th width='5%'  ><label><?= L::view_start_bets_value; ?></label></th>
+					<th width='10%' ><label><?= L::view_start_bets_paid;  ?></label></th>
+					<th width='5%'  ><label><?= L::view_start_bets_value; ?></label></th>
 				</tr>
 			</thead>
 			<tbody>

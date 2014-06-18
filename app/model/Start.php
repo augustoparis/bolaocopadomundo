@@ -25,7 +25,7 @@ class Start
         
         $retorno = $this->database->select_sql( $sql );
         
-		$arr = array();
+        $arr = array();
 		foreach ($retorno as $key => $value) {
 			$retorno[ $key ][ 'VALUE' ] = Utils::formatCurrencyBr( $value['VALUE'] );
 			
