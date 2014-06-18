@@ -7,12 +7,11 @@ Make your bet and play with friends
 
 [World Cup Brazil 2014](http://emalherbi.com/worldcup/)
 
-- USERNAME : STEVEJOBS
-- PASSWORD : STEVEJOBS
-- 
 USERNAME  | PASSWORD  | ACESS
 --------- | --------- | ---------
 STEVEJOBS | STEVEJOBS | GOLD
+MARKZUCK  | MARKZUCK  | SILVER
+BILLGATES | BILLGATES | BRONZE
 
 ## Contributing
 
