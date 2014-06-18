@@ -9,6 +9,10 @@ Make your bet and play with friends
 
 - USERNAME : STEVEJOBS
 - PASSWORD : STEVEJOBS
+- 
+USERNAME  | PASSWORD  | ACESS
+--------- | --------- | ---------
+STEVEJOBS | STEVEJOBS | GOLD
 
 ## Contributing
 
