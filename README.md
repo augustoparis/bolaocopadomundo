@@ -3,6 +3,13 @@ World Cup Brazil 2014
 
 Make your bet and play with friends
 
+## Example
+
+<http://emalherbi.com/worldcup/>
+
+USERNAME : STEVEJOBS
+PASSWORD : STEVEJOBS
+
 ## Contributing
 
 Anyone and Everyone is welcome to contribute.
