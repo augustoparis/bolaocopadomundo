@@ -5,10 +5,10 @@ Make your bet and play with friends
 
 ## Example
 
-<http://emalherbi.com/worldcup/>
+[World Cup Brazil 2014](http://emalherbi.com/worldcup/)
 
-USERNAME : STEVEJOBS
-PASSWORD : STEVEJOBS
+- USERNAME : STEVEJOBS
+- PASSWORD : STEVEJOBS
 
 ## Contributing
 
