@@ -5,7 +5,7 @@ Make your bet and play with friends
 
 ## Example
 
-[World Cup Brazil 2014](http://emalherbi.com/worldcup/)
+[Sing in](http://emalherbi.com/worldcup/)
 
 USERNAME   | PASSWORD   | ACESS
 ---------- | ---------- | ----------
